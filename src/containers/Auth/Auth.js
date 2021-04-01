@@ -125,7 +125,7 @@ class Auth extends React.Component {
                 if (valid) {
                     this.props.onAuth(this.state.controls.userName.value, this.state.controls.password.value, response.data[iterator].orders, response.data[iterator].cart, response.data[iterator]._id);
                     localStorage.setItem('user', this.state.controls.userName.value);
-                    this.props.history.push('/')
+                    this.props.history.push('/OnlineStore')
                 }
                 //dispatch
             })

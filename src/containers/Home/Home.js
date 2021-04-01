@@ -41,10 +41,10 @@ class Home extends React.Component {
                     <p className={classes.desc}>Check out our Fresh Produce, Bakery Goods, and Frozen Goods below.</p>
                     {/* <p>Get Started Below</p> */}
                     <div className={classes.HomeItemContainer}>
-                        <HomeItem type="Fruit" img={fruitImg} click={() => this.props.history.push('/Fruit')} message={fruitMsg}/>
-                        <HomeItem type="Vegetables" img={vegImg} click={() => this.props.history.push('/Vegetables')} message={vegMsg}/>
-                        <HomeItem type="Bakery" img={bakeryImg} click={() => this.props.history.push('/Bakery')} message={bakeryMsg}/>
-                        <HomeItem type="Frozen" img={frozenImg} click={() => this.props.history.push('/Frozen')} message={frozenMsg}/>
+                        <HomeItem type="Fruit" img={fruitImg} click={() => this.props.history.push('/OnlineStore/Fruit')} message={fruitMsg}/>
+                        <HomeItem type="Vegetables" img={vegImg} click={() => this.props.history.push('/OnlineStore/Vegetables')} message={vegMsg}/>
+                        <HomeItem type="Bakery" img={bakeryImg} click={() => this.props.history.push('/OnlineStore/Bakery')} message={bakeryMsg}/>
+                        <HomeItem type="Frozen" img={frozenImg} click={() => this.props.history.push('/OnlineStore/Frozen')} message={frozenMsg}/>
                     </div>
                 </div>
             </React.Fragment>

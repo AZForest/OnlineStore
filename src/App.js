@@ -53,14 +53,14 @@ class App extends React.Component {
       <div className="App">
         <Layout>
           <Switch>
-            <Route path="/" exact component={Home}/>
-            <Route path="/Fruit" component={Fruit}/>
-            <Route path="/Frozen" component={Frozen}/>
-            <Route path="/Vegetables" component={Vegetables}/>
-            <Route path="/Bakery" component={Bakery}/>
-            <Route path="/Auth" component={Auth}/>
-            <Route path="/Cart" component={Cart}/>
-            <Route path="/Account" component={Account}/>
+            <Route path="/OnlineStore" exact component={Home}/>
+            <Route path="/OnlineStore/Fruit" component={Fruit}/>
+            <Route path="/OnlineStore/Frozen" component={Frozen}/>
+            <Route path="/OnlineStore/Vegetables" component={Vegetables}/>
+            <Route path="/OnlineStore/Bakery" component={Bakery}/>
+            <Route path="/OnlineStore/Auth" component={Auth}/>
+            <Route path="/OnlineStore/Cart" component={Cart}/>
+            <Route path="/OnlineStore/Account" component={Account}/>
           </Switch>
         </Layout>
       </div>
