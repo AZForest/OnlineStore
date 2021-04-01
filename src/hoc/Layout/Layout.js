@@ -6,7 +6,7 @@ import BottomBar from '../../components/BottomBar/BottomBar';
 
 const Layout = (props) => {
     return (
-        <div style={{position: "relative"}}>
+        <div className={classes.Layout}>
             <Navbar />
             <main className={classes.Content}>
                 {props.children}
