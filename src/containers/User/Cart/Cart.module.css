@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+.Cart {
+    margin: auto;
+    width: 500px;
+    background-color: white;
+    font-family: "Noto Sans", sans-serif;
+    padding-bottom: 300px;
+}
+
+.Cart .button {
+    padding: 10px 15px;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #13b955;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.Cart .button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.Cart .button:focus {
+    outline: 0;
+}

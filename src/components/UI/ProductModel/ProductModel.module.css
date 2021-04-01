@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+.ProductModel {
+    height: 270px;
+    width: 160px;
+    background-color: white;
+    border: 1px solid rgb(235, 235, 235);
+    margin: 15px 10px;
+    position: relative;
+    font-family: "Noto Sans", sans-serif;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-weight: 700;
+}
+.itemName {
+    padding: 0px 10px;
+    /* text-transform: uppercase; */
+    font-size: 12px;
+    font-weight: bold;
+}
+.BottomBar {
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #13b955;
+    display: flex;
+    justify-content: space-between;
+}
+.BottomBar p {
+    margin: 6.5px 0;
+    padding: 0;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+}
+.BottomBar button {
+    width: 30px;
+    font-size: 18px;
+    background-color: #13b955;
+    color: white;
+    border: none;
+    /* border-top: 1px solid grey; */
+}
+.BottomBar button:focus {
+    outline: 0;
+}
+.BottomBar button:hover {
+    cursor: pointer;
+    font-size: 25px;
+}
+.BottomBar button:focus, 
+.BottomBar button:active {
+    border: none;
+}
+
+
+.disabledBtn:hover {
+    cursor: not-allowed !important;
+}

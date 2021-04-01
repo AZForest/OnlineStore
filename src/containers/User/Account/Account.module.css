@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+.Account {
+    font-family: "Noto Sans", sans-serif;
+    padding-bottom: 300px;
+}
+h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}

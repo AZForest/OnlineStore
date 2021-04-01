@@ -1,0 +1,45 @@
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 100;
+}
+
+.ModalContent {
+    height: 200px;
+    width: 300px;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-weight: bold;
+}
+.X {
+    position: absolute;
+    top: 7.5px;
+    right: 10px;
+}
+.X:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.message {
+    margin-top: 50px;
+}
+.Modal button {
+    padding: 10px 15px;
+    margin: 15px 5px 5px 5px;
+    color: white;
+    border: none;
+    font-weight: 700;
+    border-radius: 5px;
+}
+.Modal button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}

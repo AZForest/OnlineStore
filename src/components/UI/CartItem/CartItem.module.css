@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+.CartItem {
+    width: 450px;
+    height: 50px;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    font-size: 14px;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+.btnContainer {
+    display: flex;
+}
+
+.btnContainer button {
+    width: 35px;
+    height: 35px;
+    margin: 8.5px 5px;
+    font-size: 20px;
+}
+.btnContainer button:hover {
+    cursor: pointer;
+}
+.btnContainer .addBtn {
+    background-color: #13b955;
+    color: white;
+    border: 1px solid #13b955;
+    border-radius: 2px;
+}
+.btnContainer .addBtn:hover {
+    transform:scale(1.05);
+}
+.btnContainer .addBtn:focus {
+    outline: 0;
+}
+.btnContainer .subtractBtn {
+    background-color: #efa31d;
+    color: white;
+    border: 1px solid #efa31d;
+    border-radius: 2px;
+}
+.btnContainer .subtractBtn:hover {
+    transform: scale(1.05);
+}
+.btnContainer .subtractBtn:focus {
+    outline: 0;
+}

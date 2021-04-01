@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+.Order {
+    width: 600px;
+    background-color: rgb(238, 238, 238);
+    margin: 30px auto;
+    font-size: 14px;
+    font-family: "Noto Sans", sans-serif;
+    border-radius: 5px;
+    padding: 10px 15px;
+    position: relative;
+}
+.Item {
+    display: flex;
+    justify-content: space-between;
+}
+p span {
+    font-weight: 700;
+}
+.deleteBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    border: none;
+    padding: 10px;
+}
+.deleteBtn:hover {
+    background-color: #fb1313;
+    color: white;
+    cursor: pointer;
+    outline: 0;
+}

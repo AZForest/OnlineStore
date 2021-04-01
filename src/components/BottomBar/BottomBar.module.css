@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+.BottomBar {
+    height: 150px;
+    background-color: #13b955;
+    color: white;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    font-weight: 700;
+    font-family: "Noto Sans", sans-serif;
+}
+.BottomBar p {
+    font-size: 14px;
+    margin: 0;
+}
+.BottomBar .first {
+    padding-top: 30px;
+    font-size: 14px;
+    
+}
