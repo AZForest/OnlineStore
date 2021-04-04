@@ -36,7 +36,7 @@ class App extends React.Component {
       .catch(err => console.log(err))
 
       if (localStorage.getItem('user') !== null) {
-          axios.get('http://onlinestoreserver.herokuapp.com/users')
+          axios.get('https://onlinestoreserver.herokuapp.com/users')
           .then(response => {
             for (let i = 0; i < response.data.length; i++) {
               //console.log(localStorage.getItem('user'));

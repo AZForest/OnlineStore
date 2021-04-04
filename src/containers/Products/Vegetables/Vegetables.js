@@ -73,7 +73,7 @@ class Vegetables extends React.Component {
             }
             
 
-            axios.patch(`http://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addProduct`, data)
+            axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addProduct`, data)
             .then(response => {
                 console.log(response);
                 this.props.onUpdateCart(updatedAcc);
@@ -120,7 +120,7 @@ class Vegetables extends React.Component {
         }
        
         //PATCH remove
-        axios.patch(`http://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/removeProduct`, data)
+        axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/removeProduct`, data)
         .then(response => {
             console.log(response);
             this.props.onUpdateCart(updatedAcc);
