@@ -94,7 +94,7 @@ class Auth extends React.Component {
             }`
         }
         if (this.state.isSignUp) {
-            axios.post('http://onlinestoreserver.herokuapp.com/users/add', userData)
+            axios.post('https://onlinestoreserver.herokuapp.com/users/add', userData)
             .then(response => {
                 console.log(response);
                 this.props.onAuth(this.state.controls.userName.value, this.state.controls.password.value, null, null, null);
@@ -106,7 +106,7 @@ class Auth extends React.Component {
             })
         } else {
             console.log("logging in");
-            axios.get('http://onlinestoreserver.herokuapp.com/users')
+            axios.get('https://onlinestoreserver.herokuapp.com/users')
             .then(response => {
                 let valid = false;
                 let iterator;
