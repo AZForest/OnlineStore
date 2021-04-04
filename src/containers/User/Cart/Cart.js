@@ -16,7 +16,7 @@ class Cart extends React.Component {
 
     componentDidMount() {
         if (localStorage.getItem('user') !== null) {
-            axios.get('http://localhost:3005/users')
+            axios.get('http://onlinestoreserver.herokuapp.com/users')
             .then(response => {
               for (let i = 0; i < response.data.length; i++) {
                 //console.log(localStorage.getItem('user'));
@@ -68,7 +68,7 @@ class Cart extends React.Component {
         }
 
 
-        axios.patch(`http://localhost:3005/users/${this.props.user.id}/addProduct`, data)
+        axios.patch(`http://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addProduct`, data)
         .then(response => {
             console.log(response);
             this.props.onUpdateCart(updatedAcc);
@@ -113,7 +113,7 @@ class Cart extends React.Component {
         }
        
         //PATCH remove
-        axios.patch(`http://localhost:3005/users/${this.props.user.id}/removeProduct`, data)
+        axios.patch(`http://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/removeProduct`, data)
         .then(response => {
             console.log(response);
             this.props.onUpdateCart(updatedAcc);
@@ -143,11 +143,11 @@ class Cart extends React.Component {
             cart: []
         }
 
-        axios.patch(`http://localhost:3005/users/${this.props.user.id}/addOrder`, data)
+        axios.patch(`http://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addOrder`, data)
         .then(response => {
             console.log(response);
             this.setModalVisible();
-            axios.patch(`http://localhost:3005/users/${this.props.user.id}/resetCart`)
+            axios.patch(`http://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/resetCart`)
             .then(response => {
                 console.log(response);
                 this.props.onUpdateCart(updatedAcc);
@@ -158,7 +158,7 @@ class Cart extends React.Component {
                 cart: []
             }); */
             window.alert('Your order has been placed. Check your account page to view completed orders.');
-            this.props.history.push('/');
+            this.props.history.push('/OnlineStore');
 
         })
         .catch(err => {

@@ -33,7 +33,7 @@ class Account extends React.Component {
         }
         console.log(orderArray);
 
-        axios.patch(`http://localhost:3005/users/${this.props.user.id}/deleteOrder`, data)
+        axios.patch(`http://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/deleteOrder`, data)
         .then(response => {
             console.log(response);
             this.props.onUpdateCart(updatedAcc);
