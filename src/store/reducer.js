@@ -32,17 +32,9 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 activeUser: action.account
-            }
-        /* case actionTypes.ADD_PRODUCT:
-            return {
-                ...state,
-                activeUser: {
-                    userName: this.state.activeUser.userName,
-                    password: this.state.activeUser.password,
-                    orders: this.state.activeUser.orders,
-                    cart: this.state.activeUser.cart.concat(action.product)
-                }
-            } */
+            };
+        default:
+            console.log('default');
     }
         
 

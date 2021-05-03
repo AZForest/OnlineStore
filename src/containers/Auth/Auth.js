@@ -83,6 +83,7 @@ class Auth extends React.Component {
             }
         };
         this.setState({controls: updatedControls});
+        console.log(this.state.controls.password.value);
     }
 
     submitHandler = (event) => {
@@ -166,10 +167,11 @@ class Auth extends React.Component {
                 <form onSubmit={this.submitHandler}>
                     {!this.state.isSignUp ? <h3>Log In</h3> : <h3>Sign Up</h3>}
                     {form}
+                    {this.state.controls.password.value.length < this.state.controls.password.validation.minLength ? <p style={{color: "red", fontSize: "10px"}}>Password too short, must be 6 characters</p> : <p style={{color: "#13b955", fontSize: "10px"}}>Password valid ✓</p>}
                     <button>Submit</button>
                     <hr />
                 </form>
-                <button onClick={() => this.switchAuthMode()}>{!this.state.isSignUp ? "Switch to Sign Up" : "Switch to Log On"}</button>
+                <button onClick={() => this.switchAuthMode()}>{!this.state.isSignUp ? "Switch to Sign Up" : "Switch to Log In"}</button>
             </div>
 
         )

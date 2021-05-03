@@ -1,11 +1,10 @@
 import classes from './Fruit.module.css';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import ProductModel from '../../../components/UI/ProductModel/ProductModel';
 import * as actionTypes from '../../../store/actions/actionTypes';
-// import { remover } from '../../User/Cart/Cart';
-import Cart, { removeHandler } from '../../User/Cart/Cart';
+
 //Images
 import banana from '../../../assets/Fruit/Banana.jpg';
 import organicBanana from '../../../assets/Fruit/OrganicBanana.jpg';
@@ -15,7 +14,6 @@ import pineapple from '../../../assets/Fruit/FreshPineapple.jpg';
 import raspberries from '../../../assets/Fruit/Raspberries.jpg';
 import redGrapes from '../../../assets/Fruit/RedSeedlessGrapes.jpg';
 import strawberries from '../../../assets/Fruit/Strawberries.jpg';
-import BottomBar from '../../../components/BottomBar/BottomBar';
 
 class Fruit extends React.Component {
 

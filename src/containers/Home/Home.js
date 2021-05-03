@@ -1,15 +1,12 @@
 import classes from './Home.module.css';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { connect } from 'react-redux';
-import homeImg from '../../assets/HomeImages/produceImg.jpeg';
 import HomeItem from '../../components/UI/HomeItem/HomeItem';
 import fruitImg from '../../assets/HomeImages/fruitImg.jpeg';
 import vegImg from '../../assets/HomeImages/vegImg.jpg';
 import bakeryImg from '../../assets/HomeImages/breadImg.jpg';
 import frozenImg from '../../assets/HomeImages/frozenImg.jpeg';
 import eLogo2 from '../../assets/HomeImages/logo.png';
-import BottomBar from '../../components/BottomBar/BottomBar';
 
 class Home extends React.Component {
 
@@ -35,7 +32,7 @@ class Home extends React.Component {
                         <div className={classes.circle4}></div>
                         <div className={classes.circle5}></div>
                         <h2><span>e</span>Pr<span>o</span>d<span>u</span>ce</h2>
-                        <img style={{filter: "grayscale(100%)"}}src={eLogo2} height={100} width={110}/>
+                        <img style={{filter: "grayscale(100%)"}}src={eLogo2} height={100} width={110} alt=""/>
                         <p className={classes.tag}>Get your produce, bakery, and frozen needs shipped directly to your house in just days.</p>
                     </div>
                     <p className={classes.desc}>Check out our Fresh Produce, Bakery Goods, and Frozen Goods below.</p>

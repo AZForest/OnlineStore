@@ -6,7 +6,7 @@ const productModel = (props) => {
     return (
         <div className={classes.ProductModel}>
             <p className={classes.itemName}>{props.name}</p>
-            <img src={props.img} height={100} width={100}/>
+            <img src={props.img} height={100} width={100} alt=""/>
             <p>${props.price}</p>
             <div className={classes.BottomBar} style={props.count > 0 ? {backgroundColor: "#efa31d"} : {backgroundColor: ""}}>
                 {props.count > 0 ? <button onClick={props.remove} style={{backgroundColor: "#efa31d"}}>-</button> : <button disabled={true} className={classes.disabledBtn} onClick={props.remove}>-</button>}

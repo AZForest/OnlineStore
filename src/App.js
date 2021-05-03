@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, { useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
 import Layout from './hoc/Layout/Layout';
 import { Route, Switch } from 'react-router-dom';
@@ -68,12 +68,6 @@ class App extends React.Component {
   }
 
   
-}
-
-const mapStateToProps = dispatch => {
-    return {
-
-    }
 }
 
 const mapDispatchToProps = dispatch => {
