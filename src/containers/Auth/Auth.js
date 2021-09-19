@@ -162,12 +162,22 @@ class Auth extends React.Component {
                 changed={( event ) => this.inputChangedHandler( event, formElement.id )}/>
         ))
 
+        let message = "";
+        if (this.state.controls.password.value.length > 0) {
+            if (this.state.controls.password.value.length < this.state.controls.password.validation.minLength) {
+                message = <p style={{color: "red", fontSize: "10px"}}>Password too short, must be 6 characters</p>
+            } else {
+                message = <p style={{color: "#13b955", fontSize: "10px"}}>Password valid ✓</p>
+            }
+        } 
+
         return (
             <div className={classes.Auth}>
                 <form onSubmit={this.submitHandler}>
                     {!this.state.isSignUp ? <h3>Log In</h3> : <h3>Sign Up</h3>}
                     {form}
-                    {this.state.controls.password.value.length < this.state.controls.password.validation.minLength ? <p style={{color: "red", fontSize: "10px"}}>Password too short, must be 6 characters</p> : <p style={{color: "#13b955", fontSize: "10px"}}>Password valid ✓</p>}
+                    {/*this.state.controls.password.value.length < this.state.controls.password.validation.minLength ? <p style={{color: "red", fontSize: "10px"}}>Password too short, must be 6 characters</p> : <p style={{color: "#13b955", fontSize: "10px"}}>Password valid ✓</p>*/}
+                    {message}
                     <button>Submit</button>
                     <hr />
                 </form>
