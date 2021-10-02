@@ -56,7 +56,7 @@
 ### Built with:
 
 * React, including Router
-** Created with create-react-app
+  * Created with [create-react-app](https://github.com/facebook/create-react-app)
 * Redux, for state-management
 
 ### API Interface:
