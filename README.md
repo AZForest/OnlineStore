@@ -1,7 +1,10 @@
 # OnlineStore
 
-* An e-commerce app that simulates a real-world produce site that allows users to create an account, login, select/remove/update counts of items in their cart, and place/delete orders. 
-* Live link: [OnlineStore](https://azforest.github.io/OnlineStore)
+* An e-commerce app that simulates a real-world produce site that allows users to create an account, login, select/remove/update counts of items in their cart, and place/delete orders.
+
+## Links
+
+* [Live Link](https://azforest.github.io/OnlineStore)
 
 ## Screenshots
 
