@@ -83,7 +83,6 @@ class Auth extends React.Component {
             }
         };
         this.setState({controls: updatedControls});
-        console.log(this.state.controls.password.value);
     }
 
     submitHandler = (event) => {
@@ -106,7 +105,6 @@ class Auth extends React.Component {
                 console.log(err);
             })
         } else {
-            console.log("logging in");
             axios.get('https://onlinestoreserver.herokuapp.com/users')
             .then(response => {
                 let valid = false;

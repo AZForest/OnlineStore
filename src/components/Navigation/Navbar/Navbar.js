@@ -29,10 +29,12 @@ class Navbar extends React.Component {
             <div className={classes.Navbar}>
                 <div className={classes.right}>
                     <h2><NavLink to="/OnlineStore">eProduce</NavLink></h2>
-                    <NavigationItem link="/OnlineStore/Fruit">Fruit</NavigationItem>
-                    <NavigationItem link="/OnlineStore/Vegetables">Vegetables</NavigationItem>
-                    <NavigationItem link="/OnlineStore/Bakery">Bakery</NavigationItem>
-                    <NavigationItem link="/OnlineStore/Frozen">Frozen</NavigationItem>
+                    <div className={classes.navItems}>
+                        <NavigationItem link="/OnlineStore/Fruit">Fruit</NavigationItem>
+                        <NavigationItem link="/OnlineStore/Vegetables">Vegetables</NavigationItem>
+                        <NavigationItem link="/OnlineStore/Bakery">Bakery</NavigationItem>
+                        <NavigationItem link="/OnlineStore/Frozen">Frozen</NavigationItem>
+                    </div>
                 </div>
                 <div className={classes.left}>
                     {this.props.activeAcc === null ? <NavigationItem link="/OnlineStore/Auth">Log in / Sign Up</NavigationItem> : <NavigationItem link="/OnlineStore/Account">{this.props.activeAcc.userName}</NavigationItem>}

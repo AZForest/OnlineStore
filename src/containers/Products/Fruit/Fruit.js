@@ -24,13 +24,11 @@ class Fruit extends React.Component {
     componentDidMount() {
         let fruit = [];
         let products = JSON.parse(localStorage.getItem('products'));
-        console.log(products);
         for (let i = 0; i < products.length; i++) {
             if (products[i].type === "Fruit") {
                 fruit.push(products[i]);
             }
         }
-        console.log(fruit);
         this.setState({products: fruit})
     }
 
@@ -79,7 +77,7 @@ class Fruit extends React.Component {
 
             axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addProduct`, data)
             .then(response => {
-                console.log(response);
+                /*console.log(response);*/
                 this.props.onUpdateCart(updatedAcc);
             })
             .catch(err => {

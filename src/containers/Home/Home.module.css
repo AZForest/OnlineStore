@@ -2,9 +2,9 @@
 
 .Home {
     background-color: white;
-    height: 100vh;
+    /*height: 100vh;*/
     font-family: "Noto Sans", sans-serif;
-    padding-bottom: 600px;
+    /*padding-bottom: 200px;*/
 }
 
 .backDrop {
@@ -92,4 +92,21 @@
     margin: auto;
     width: 900px;
     
+}
+
+@media (max-width: 550px) {
+    .backDrop {
+        width: 90%;
+    }
+    .tag {
+        width: 80%;
+        font-size: 12px;
+    }
+    .HomeItemContainer {
+        width: 90%;
+    }
+    .desc {
+        font-size: 12px;
+        margin: 50px 30px 10px 30px;
+    }
 }

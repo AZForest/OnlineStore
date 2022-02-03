@@ -16,3 +16,6 @@
     color: black;
     background-color: white;
 } */
+.NavigationItem p a {
+    font-size: 12px;
+}

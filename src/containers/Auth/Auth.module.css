@@ -1,5 +1,4 @@
 .Auth {
-    height: 100vh;
     width: 600px;
     margin: auto;
 }
@@ -20,4 +19,10 @@
 
 .Auth button:focus {
     outline: 0;
+}
+
+@media (max-width: 550px) {
+    .Auth {
+        width: 100%;
+    }
 }

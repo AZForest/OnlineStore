@@ -5,7 +5,7 @@
     width: 500px;
     background-color: white;
     font-family: "Noto Sans", sans-serif;
-    padding-bottom: 300px;
+    /*padding-bottom: 300px;*/
 }
 
 .Cart .button {
@@ -25,4 +25,10 @@
 
 .Cart .button:focus {
     outline: 0;
+}
+
+@media (max-width: 550px) {
+    .Cart {
+        width: 100%;
+    }
 }

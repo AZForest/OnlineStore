@@ -24,6 +24,9 @@
     color: white;
     text-decoration: none;
 }
+.right .navItems {
+    display: flex;
+}
 .left {
     width: 400px;
     display: flex;
@@ -48,3 +51,31 @@
     background-color: white;
     color: black;
 } */
+@media (max-width: 550px) {
+    .Navbar {
+        height: fit-content;
+        flex-direction: column;
+    }
+    .right {
+        height: fit-content;
+        flex-direction: column;
+
+        width: 100%;
+    }
+    .right h2 {
+        margin: 10px auto;
+    }
+    .left {
+        background-color: transparent;
+        width: 100%;
+    }
+    .right h2 {
+        font-size: 14px;
+    }
+    .navItems {
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

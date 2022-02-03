@@ -2,10 +2,9 @@
 
 .Fruit {
     background-color: white;
-    height: 100vh;
     width: 100%;
     font-family: "Noto Sans", sans-serif;
-    padding-bottom: 250px;
+    /*padding-bottom: 250px;*/
 }
 .FruitContainer {
     width: 850px;
@@ -18,4 +17,10 @@
 .Fruit h3 {
     margin-bottom: 10px;
     font-weight: 700;
+}
+
+@media (max-width: 550px) {
+    .FruitContainer {
+        width: 100%;
+    }
 }

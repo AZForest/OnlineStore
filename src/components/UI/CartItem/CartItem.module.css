@@ -50,3 +50,11 @@
 .btnContainer .subtractBtn:focus {
     outline: 0;
 }
+
+@media (max-width: 550px) {
+    .CartItem {
+        height: fit-content;
+        width: 80%;
+        font-size: 12px;
+    }
+}

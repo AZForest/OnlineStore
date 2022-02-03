@@ -145,11 +145,9 @@ class Cart extends React.Component {
 
         axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addOrder`, data)
         .then(response => {
-            console.log(response);
             this.setModalVisible();
             axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/resetCart`)
             .then(response => {
-                console.log(response);
                 this.props.onUpdateCart(updatedAcc);
             })
             .catch(err => console.log(err))

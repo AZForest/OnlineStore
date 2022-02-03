@@ -76,7 +76,7 @@ class Bakery extends React.Component {
 
             axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addProduct`, data)
             .then(response => {
-                console.log(response);
+                /*console.log(response);*/
                 this.props.onUpdateCart(updatedAcc);
             })
             .catch(err => {

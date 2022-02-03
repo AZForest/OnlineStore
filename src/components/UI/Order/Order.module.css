@@ -30,3 +30,9 @@ p span {
     cursor: pointer;
     outline: 0;
 }
+
+@media (max-width: 550px) {
+    .Order {
+        width: 80%;
+    }
+}
