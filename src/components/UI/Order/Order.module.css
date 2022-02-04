@@ -31,7 +31,7 @@ p span {
     outline: 0;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 800px) {
     .Order {
         width: 80%;
     }

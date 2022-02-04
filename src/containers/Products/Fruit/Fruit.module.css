@@ -19,7 +19,7 @@
     font-weight: 700;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 800px) {
     .FruitContainer {
         width: 100%;
     }

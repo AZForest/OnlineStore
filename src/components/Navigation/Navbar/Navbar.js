@@ -24,7 +24,7 @@ class Navbar extends React.Component {
             }
         }
         
-
+        /*style={{fontSize: "14px", fontWeight: "700", margin: "1px 5px", padding: "16px 12px 20px 12px"}}*/
         return (
             <div className={classes.Navbar}>
                 <div className={classes.right}>
@@ -39,7 +39,7 @@ class Navbar extends React.Component {
                 <div className={classes.left}>
                     {this.props.activeAcc === null ? <NavigationItem link="/OnlineStore/Auth">Log in / Sign Up</NavigationItem> : <NavigationItem link="/OnlineStore/Account">{this.props.activeAcc.userName}</NavigationItem>}
                     {this.props.activeAcc === null ? "" : <NavigationItem link="/OnlineStore/Cart">My Cart ({this.props.activeAcc.cart.length !== null ? totalItems : ""})</NavigationItem>}
-                    {this.props.activeAcc !== null ? <p className={classes.logout} style={{fontSize: "14px", fontWeight: "700", margin: "1px 5px", padding: "16px 12px 20px 12px"}} onClick={() => this.logOut()}>Log Off</p> : "" }
+                    {this.props.activeAcc !== null ? <p className={classes.logout}  onClick={() => this.logOut()}>Log Off</p> : "" }
                 </div>
                 
             </div>
