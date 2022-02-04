@@ -8,8 +8,6 @@ import * as actionTypes from '../../../store/actions/actionTypes';
 class Account extends React.Component {
 
     deleteOrder(order) {
-        console.log(order);
-        console.log(this.props.user.orders);
         let data = {
             orders: this.props.user.orders,
             delOrder: order
@@ -31,11 +29,9 @@ class Account extends React.Component {
             ...this.props.user,
             orders: orderArray
         }
-        console.log(orderArray);
 
         axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/deleteOrder`, data)
         .then(response => {
-            console.log(response);
             this.props.onUpdateCart(updatedAcc);
         })
         .catch(err => {
@@ -48,7 +44,7 @@ class Account extends React.Component {
         if (this.props.user !== null) {
             if (this.props.user.orders.length > 0) {
                 orders = this.props.user.orders.map(order => {
-                    console.log(order);
+                    //console.log(order);
                     return <Order key={Math.random()} orderInfo={order} delete={() => this.deleteOrder(order)}/>
                 })
             }

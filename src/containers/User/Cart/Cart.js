@@ -70,7 +70,6 @@ class Cart extends React.Component {
 
         axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addProduct`, data)
         .then(response => {
-            console.log(response);
             this.props.onUpdateCart(updatedAcc);
         })
         .catch(err => {
@@ -134,6 +133,9 @@ class Cart extends React.Component {
                 id: Math.random()
             }
         }
+        let x = this.props.user.orders.filter(order => order !== data.newOrder);
+        data.prevOrders = x;
+
         let newOrders = this.props.user.orders;
         newOrders.push(data.newOrder);
 
@@ -142,6 +144,7 @@ class Cart extends React.Component {
             orders: newOrders,
             cart: []
         }
+        //console.log(data);
 
         axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addOrder`, data)
         .then(response => {
@@ -185,12 +188,13 @@ class Cart extends React.Component {
             modal = <Modal message={message} xClick={() => this.setModalVisible()} order={() => this.finalizeOrder(price.toFixed(2))}/>;
         }
 
+        //style={this.props.user.cart.length === 0 ? {marginBottom: "170px"} : {marginBottom: "10px"}}
         return (
             <React.Fragment>
                 {modal}
                 <div className={classes.Cart}>
                     <h2 >Your Cart</h2>
-                    {this.props.user.cart.map(item => {
+                    {this.props.user ? this.props.user.cart.map(item => {
                         return <CartItem 
                         key={Math.random()} 
                         name={item.name} 
@@ -198,13 +202,13 @@ class Cart extends React.Component {
                         count={item.count} 
                         add={() => this.addHandler(item.name, item.price)}
                         remove={() => this.removeHandler(item.name, item.price)}/>
-                    })}
+                    }) : ""}
                     <hr />
-                    <div>
+                    {this.props.user ? <div>
                         <h4>Total Items: {totalItems}</h4>
                         <h4>Price: ${price.toFixed(2)} </h4>
-                        <button className={classes.button} onClick={() => this.setModalVisible()} style={this.props.user.cart.length === 0 ? {marginBottom: "170px"} : {marginBottom: "10px"}} disabled={this.props.user.cart.length > 0 ? false : true}>Place Order</button>
-                    </div>
+                        <button className={classes.button} onClick={() => this.setModalVisible()} disabled={this.props.user.cart.length > 0 ? false : true}>Place Order</button>
+                    </div> : ""}
                 </div>
             </React.Fragment>
         )

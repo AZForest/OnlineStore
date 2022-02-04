@@ -79,7 +79,7 @@
     right: 520px;
 }
 .desc {
-    margin: 50px 0 0 0;
+    margin: 40px 0 10px 0;
     font-size: 14px;
     font-weight: bold;
     color: black;
@@ -88,10 +88,12 @@
 .HomeItemContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: auto;
-    width: 900px;
-    
+    width: 700px;
+    padding: 10px 0px;
+    background-image: linear-gradient(rgba(19,185,85, 0.125), rgba(19,185,85, 0.125));
+    border-radius: 5px;
 }
 
 @media (max-width: 800px) {

@@ -87,7 +87,6 @@ class Auth extends React.Component {
 
     submitHandler = (event) => {
         event.preventDefault();
-        console.log("working");
         const userData = {
             "userName": `${this.state.controls.userName.value}`,
             "password": `${this.state.controls.password.value
@@ -120,7 +119,6 @@ class Auth extends React.Component {
                         }
                     }
                 }
-                console.log(valid);
                 if (valid) {
                     this.props.onAuth(this.state.controls.userName.value, this.state.controls.password.value, response.data[iterator].orders, response.data[iterator].cart, response.data[iterator]._id);
                     localStorage.setItem('user', this.state.controls.userName.value);

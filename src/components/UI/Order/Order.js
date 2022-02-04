@@ -3,6 +3,7 @@ import classes from './Order.module.css';
 
 const order = (props) => {
     let newDate = String(props.orderInfo.date);
+    newDate = newDate.slice(0, 10)
     //newDate.slice(10);
     return (
         <div className={classes.Order}>
@@ -17,7 +18,7 @@ const order = (props) => {
             })}
             <div>
                 <hr />
-                <p><span>Total:</span> ${props.orderInfo.totalPrice}</p>
+                <p className={classes.orderTotal}><span>Total:</span> ${props.orderInfo.totalPrice}</p>
             </div>
             <button onClick={props.delete} className={classes.deleteBtn}>X</button>
 

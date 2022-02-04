@@ -2,13 +2,14 @@
 .CartItem {
     width: 450px;
     height: 50px;
-    background-color: rgb(238, 238, 238);
+    /*background-color: rgb(238, 238, 238);*/
+    background-color: rgba(19,185,85, 0.125);
     display: flex;
     justify-content: space-between;
     margin: 10px auto;
     font-size: 14px;
     font-family: "Noto Sans", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     border-radius: 5px;
     padding: 5px 15px;
 }

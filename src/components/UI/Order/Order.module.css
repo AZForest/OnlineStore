@@ -2,20 +2,26 @@
 .Order {
     width: 600px;
     background-color: rgb(238, 238, 238);
+    /*background-color: rgba(19,185,85, 0.125);*/
     margin: 30px auto;
     font-size: 14px;
     font-family: "Noto Sans", sans-serif;
     border-radius: 5px;
     padding: 10px 15px;
     position: relative;
+    font-weight: bold;
 }
 .Item {
     display: flex;
     justify-content: space-between;
+    padding: 0px 10px;
+    margin: 5px 0;
+    background-color: rgba(19,185,85, 0.125);
 }
 p span {
     font-weight: 700;
 }
+
 .deleteBtn {
     position: absolute;
     right: 0;
@@ -23,6 +29,8 @@ p span {
     font-size: 12px;
     border: none;
     padding: 10px;
+    font-weight: bold;
+    background-color: transparent;
 }
 .deleteBtn:hover {
     background-color: #fb1313;
