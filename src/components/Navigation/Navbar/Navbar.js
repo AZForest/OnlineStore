@@ -17,7 +17,7 @@ class Navbar extends React.Component {
 
     render() {
         let totalItems = 0;
-        if (this.props.activeAcc !== null) {
+        if (this.props.activeAcc && this.props.activeAcc.cart) {
             for (let i = 0; i < this.props.activeAcc.cart.length; i++) {
                 totalItems += this.props.activeAcc.cart[i].count;     
             }
@@ -37,7 +37,7 @@ class Navbar extends React.Component {
                 </div>
                 <div className={classes.left}>
                     {this.props.activeAcc === null ? <NavigationItem link="/OnlineStore/Auth">Log in / Sign Up</NavigationItem> : <NavigationItem link="/OnlineStore/Account">{this.props.activeAcc.userName}</NavigationItem>}
-                    {this.props.activeAcc === null ? "" : <NavigationItem link="/OnlineStore/Cart">My Cart ({this.props.activeAcc.cart.length !== null ? totalItems : ""})</NavigationItem>}
+                    {this.props.activeAcc === null ? "" : <NavigationItem link="/OnlineStore/Cart">My Cart ({totalItems})</NavigationItem>}
                     {this.props.activeAcc !== null ? <p className={classes.logout}  onClick={() => this.logOut()}>Log Off</p> : "" }
                 </div>
                 

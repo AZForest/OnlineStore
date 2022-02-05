@@ -175,7 +175,7 @@ class Cart extends React.Component {
     render() {
         let totalItems = 0;
         let price = 0;
-        if (this.props.user !== null) {
+        if (this.props.user && this.props.user.cart) {
             for (let i = 0; i < this.props.user.cart.length; i++) {
                 totalItems += this.props.user.cart[i].count;
                 price += this.props.user.cart[i].price * this.props.user.cart[i].count
@@ -194,7 +194,7 @@ class Cart extends React.Component {
                 {modal}
                 <div className={classes.Cart}>
                     <h2 >Your Cart</h2>
-                    {this.props.user ? this.props.user.cart.map(item => {
+                    {this.props.user && this.props.user.cart ? this.props.user.cart.map(item => {
                         return <CartItem 
                         key={Math.random()} 
                         name={item.name} 

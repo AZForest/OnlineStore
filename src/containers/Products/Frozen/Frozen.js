@@ -153,7 +153,7 @@ class Frozen extends React.Component {
     }
 
     countHandler(item) {
-        if (this.props.user !== null) {
+        if (this.props.user && this.props.user.cart) {
             let userCart = this.props.user.cart;
             let result = -1;
             for (let i = 0; i < userCart.length; i++) {

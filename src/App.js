@@ -29,7 +29,7 @@ class App extends React.Component {
   componentDidMount() {
     axios.get('https://onlinestoreserver.herokuapp.com/products')
       .then(response => {
-          console.log(response.data);
+          //console.log(response.data);
           this.props.onInitProducts(response.data);
           localStorage.setItem('products', JSON.stringify(response.data));
       })

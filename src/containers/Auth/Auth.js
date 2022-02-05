@@ -18,7 +18,8 @@ class Auth extends React.Component {
                 },
                 value: '',
                 validation: {
-                    required: true
+                    required: true,
+                    min_length: 6
                 },
                 valid: false,
                 touched: false
@@ -38,7 +39,9 @@ class Auth extends React.Component {
                 touched: false
             }
         },
-        isSignUp: false
+        isSignUp: false,
+        noMatch: false,
+        invalidSignUp: false
     }
 
     checkValidity(value, rules) {
@@ -92,17 +95,30 @@ class Auth extends React.Component {
             "password": `${this.state.controls.password.value
             }`
         }
+        
         if (this.state.isSignUp) {
-            axios.post('https://onlinestoreserver.herokuapp.com/users/add', userData)
-            .then(response => {
-                console.log(response);
-                this.props.onAuth(this.state.controls.userName.value, this.state.controls.password.value, null, null, null);
-                localStorage.setItem('user', this.state.controls.userName.value);
-                this.props.history.push('/');
-            })
-            .catch(err => {
-                console.log(err);
-            })
+            if (this.state.controls.userName.value.length >= 3 &&
+                this.state.controls.password.value.length >= 6) {
+                    axios.post('https://onlinestoreserver.herokuapp.com/users/add', userData)
+                    .then(response => {
+                        console.log(response);
+                        axios.get('https://onlinestoreserver.herokuapp.com/users')
+                        .then(res => {
+                            let acc = res.data.find(account => account.userName === this.state.controls.userName.value);
+                            this.props.onAuth(acc.userName, acc.password, acc.orders, acc.cart, acc._id);
+                            localStorage.setItem('user', this.state.controls.userName.value);
+                            this.props.history.push('/OnlineStore');
+                        })
+                        .catch(err => console.log(err));
+                        //this.props.onAuth(this.state.controls.userName.value, this.state.controls.password.value, [], [], null);
+                        
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    })
+            } else {
+                this.setState({invalidSignUp: true})
+            } 
         } else {
             axios.get('https://onlinestoreserver.herokuapp.com/users')
             .then(response => {
@@ -110,8 +126,6 @@ class Auth extends React.Component {
                 let iterator;
 
                 for (let i = 0; i < response.data.length; i++) {
-/*                     console.log(response.data[i].userName, this.state.controls.userName.value);
-                    console.log(response.data[i].password, this.state.controls.password.value); */
                     if (response.data[i].userName === this.state.controls.userName.value) {
                         if (response.data[i].password === this.state.controls.password.value) {
                             valid = true;
@@ -123,6 +137,8 @@ class Auth extends React.Component {
                     this.props.onAuth(this.state.controls.userName.value, this.state.controls.password.value, response.data[iterator].orders, response.data[iterator].cart, response.data[iterator]._id);
                     localStorage.setItem('user', this.state.controls.userName.value);
                     this.props.history.push('/OnlineStore')
+                } else {
+                    this.setState({noMatch: true});
                 }
                 //dispatch
             })
@@ -131,7 +147,7 @@ class Auth extends React.Component {
     }
 
     switchAuthMode() {
-        this.setState({isSignUp: !this.state.isSignUp})
+        this.setState({isSignUp: !this.state.isSignUp, noMatch: false, invalidSignUp: false})
     }
 
     render() {
@@ -174,6 +190,8 @@ class Auth extends React.Component {
                     {form}
                     {/*this.state.controls.password.value.length < this.state.controls.password.validation.minLength ? <p style={{color: "red", fontSize: "10px"}}>Password too short, must be 6 characters</p> : <p style={{color: "#13b955", fontSize: "10px"}}>Password valid ✓</p>*/}
                     {message}
+                    {this.state.noMatch ? <p className={classes.noMatch}>Username/Password combination does not match any in our records</p> : ""}
+                    {this.state.invalidSignUp ? <p className={classes.noMatch}>Invalid Signup Name/Password</p> : ""}
                     <button>Submit</button>
                     <hr />
                 </form>
