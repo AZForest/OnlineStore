@@ -144,7 +144,6 @@ class Cart extends React.Component {
             orders: newOrders,
             cart: []
         }
-        //console.log(data);
 
         axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addOrder`, data)
         .then(response => {
@@ -154,10 +153,6 @@ class Cart extends React.Component {
                 this.props.onUpdateCart(updatedAcc);
             })
             .catch(err => console.log(err))
-            /* this.props.onResetCart({
-                ...this.props.user,
-                cart: []
-            }); */
             window.alert('Your order has been placed. Check your account page to view completed orders.');
             this.props.history.push('/OnlineStore');
 
@@ -230,6 +225,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
-
-/* export const Cart = connect(mapStateToProps, mapDispatchToProps)(Cart);
-export const removeHandler = () => this.removeHandler(); */

@@ -76,7 +76,6 @@ class Bakery extends React.Component {
 
             axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addProduct`, data)
             .then(response => {
-                /*console.log(response);*/
                 this.props.onUpdateCart(updatedAcc);
             })
             .catch(err => {
@@ -173,11 +172,6 @@ class Bakery extends React.Component {
 
     render() {
         let bakeryItems = this.state.products;
-        /* for (let i = 0; i < this.props.productsArr.length; i++) {
-            if (this.props.productsArr[i].type === "Bakery") {
-                bakeryItems.push(this.props.productsArr[i]);
-            }
-        } */
 
         return (
             <div className={classes.Fruit}>

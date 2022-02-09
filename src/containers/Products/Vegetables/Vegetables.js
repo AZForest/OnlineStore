@@ -165,7 +165,6 @@ class Vegetables extends React.Component {
             } else {
                 return result;
             }
-            //return result[0].count;
         } else {
             return 0;
         }
@@ -173,11 +172,6 @@ class Vegetables extends React.Component {
 
     render() {
         let vegetableItems = this.state.products;
-        /* for (let i = 0; i < this.props.productsArr.length; i++) {
-            if (this.props.productsArr[i].type === "Vegetable") {
-                vegetableItems.push(this.props.productsArr[i]);
-            }
-        } */
 
         return (
             

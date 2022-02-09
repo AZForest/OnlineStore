@@ -44,7 +44,6 @@ class Account extends React.Component {
         if (this.props.user !== null) {
             if (this.props.user.orders.length > 0) {
                 orders = this.props.user.orders.map(order => {
-                    //console.log(order);
                     return <Order key={Math.random()} orderInfo={order} delete={() => this.deleteOrder(order)}/>
                 })
             }

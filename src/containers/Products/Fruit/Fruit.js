@@ -77,7 +77,6 @@ class Fruit extends React.Component {
 
             axios.patch(`https://onlinestoreserver.herokuapp.com/users/${this.props.user.id}/addProduct`, data)
             .then(response => {
-                /*console.log(response);*/
                 this.props.onUpdateCart(updatedAcc);
             })
             .catch(err => {
@@ -167,7 +166,6 @@ class Fruit extends React.Component {
             } else {
                 return result;
             }
-            //return result[0].count;
         } else {
             return 0;
         }
@@ -175,11 +173,6 @@ class Fruit extends React.Component {
 
     render() {
         let fruitItems = this.state.products;
-        /* for (let i = 0; i < this.state.products.length; i++) {
-            if (this.state.products[i].type === "Fruit") {
-                fruitItems.push(this.state.products[i]);
-            }
-        } */
 
 
         return (
